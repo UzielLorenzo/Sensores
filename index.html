@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica Inventario</title>
+    <script>
+        async function loadProducts() {
+            const response = await fetch('/productos');
+            const productos = await response.json();
+            const list = document.getElementById('productos');
+            productos.forEach(producto => {
+                const item = document.createElement('li');
+                item.textContent = `${producto.nombre_producto} - $${producto.precio_producto}`;
+                list.appendChild(item);
+            });
+        }
+    </script>
+</head>
+<body onload="loadProducts()">
+    <h1>Inventario de Productos</h1>
+    <ul id="productos"></ul>
+</body>
+</html>

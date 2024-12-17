@@ -1,12 +1,12 @@
 <?php
 // Configuración de la base de datos PostgreSQL en Azure
-$host = "sensordb-server.postgres.database.azure.com";
-$dbname = "sensor_data";
-$user = "postgres@nombre-del-servidor";
-$password = "tu_contraseña";
+$host = 'practicainventario.postgres.database.azure.com';
+$dbname = 'db_Inventario';
+$username = 'Adminpractica';
+$password = 'Alumnos1';
 
 try {
-    $conn = new PDO("pgsql:host=$host;dbname=$dbname", $user, $password, [
+    $conn = new PDO("pgsql:host=$host;dbname=$dbname", $username, $password, [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_EMULATE_PREPARES => false
     ]);
